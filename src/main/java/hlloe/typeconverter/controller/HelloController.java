@@ -1,5 +1,6 @@
 package hlloe.typeconverter.controller;
 
+import hlloe.typeconverter.type.IpPort;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,6 +28,13 @@ public class HelloController {
     @GetMapping("/hello-v3/{data}")
     public String helloV3(@PathVariable Integer data) {
         System.out.println("data = " + data);
+        return "ok";
+    }
+
+    @GetMapping("/ip-port")
+    public String ipPort(@RequestParam IpPort ipPort) {
+        System.out.println("ipPort Ip = " + ipPort.getIp());
+        System.out.println("ipPort Port = " + ipPort.getPort());
         return "ok";
     }
 
